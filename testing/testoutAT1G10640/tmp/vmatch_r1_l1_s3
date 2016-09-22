@@ -1,0 +1,1 @@
+# args=-q testoutAT1G10640/reads_data/lib1/reads1_200_3.fasta -l 30 -e 3 -showdesc 0 /scratch/twmccart/SRAssembler/testing/testoutAT1G10640/tmp/round1
