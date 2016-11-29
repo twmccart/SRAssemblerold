@@ -1,0 +1,72 @@
+##!/bin/bash
+
+#echo "============================================================================================================"
+#echo " Test1: AtGAUT1_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p AtGAUT1_against_IRBB7
+#../bin/SRAssembler -q AtGAUT1.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtGAUT1_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+#echo "============================================================================================================"
+#echo " Test2: AtPAE8_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p AtPAE8_against_IRBB7
+#../bin/SRAssembler -q AtPAE8.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtPAE8_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+#echo "============================================================================================================"
+#echo " Test3: AtPAE9_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p AtPAE9_against_IRBB7
+#../bin/SRAssembler -q AtPAE9.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtPAE9_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+#echo "============================================================================================================"
+#echo " Test4: AtPMEI1_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p AtPMEI1_against_IRBB7
+#../bin/SRAssembler -q AtPMEI1.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtPMEI1_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+#echo "============================================================================================================"
+#echo " Test5: AtPMEI2_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p AtPMEI2_against_IRBB7
+#../bin/SRAssembler -q AtPMEI2.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtPMEI2_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+#echo "============================================================================================================"
+#echo " Test6: OsBIG_against_IRBB7"
+#echo "============================================================================================================"
+
+#mkdir -p OsBIG_against_IRBB7
+#../bin/SRAssembler -q OsBIGgenomic.fa -t cdna -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsBIG_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+echo "============================================================================================================"
+echo " Test7: AtCESA7protein_against_IRBB7"
+echo "============================================================================================================"
+
+mkdir -p AtCESA7protein_against_IRBB7
+../bin/SRAssembler -q AtCESA7protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtCESA7protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+echo "============================================================================================================"
+echo " Test8: OsCESA9protein_against_IRBB7"
+echo "============================================================================================================"
+
+mkdir -p OsCESA9protein_against_IRBB7
+../bin/SRAssembler -q OsCESA9protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsCESA9protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+echo "============================================================================================================"
+echo " Test9: OsCESA9CDS_against_IRBB7"
+echo "============================================================================================================"
+
+mkdir -p OsCESA9CDS_against_IRBB7
+../bin/SRAssembler -q OsCESA9CDS.fa -t cdna -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsCESA9CDS_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
+echo "============================================================================================================"
+echo " Test10: OsCESA9gDNA_against_IRBB7"
+echo "============================================================================================================"
+
+mkdir -p OsCESA9gDNA_against_IRBB7
+../bin/SRAssembler -q OsCESA9gDNA.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsCESA9gDNA_against_IRBB7 -A 0 -S 0 -s rice -n 10
+
