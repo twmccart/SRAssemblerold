@@ -1,6 +1,6 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 # Takes as input a set of reads and a BUSCO protein, and then generates an SRAssembler run script to find the gene.
-# Prints to STDOUT, so redirect to file.
+# Prints to STDOUT
 
 
 # import modules
@@ -14,14 +14,16 @@ parser.add_argument("--query", help="query protein", )
 args = parser.parse_args()
 
 # Name some variables
-# Peel off the filetype designation from the query file
-queryname = ".".join(args.query.split(".")[0:-1])
-libraryname = ".".join(args.library.split(".")[0:-1])
+# Separate file names and directory locations
+queryname = ".".join(((args.query).split("/")[-1]).split(".")[0:-1])
+querylocation = "/".join((args.query).split("/")[0:-1])
+libraryname = ".".join(((args.library).split("/")[-1]).split(".")[0:-1])
+librarylocation = "/".join((args.library).split("/")[0:-1])
+
 outputdirectory = queryname + "_against_" + libraryname
-SRAlocation = "usr/local/bin/SRAssembler"
+SRAlocation = "/usr/local/bin/SRAssembler"
 SRAconfigurationfile = "/scratch/twmccart/SRAssembler/data/SRAssembler.conf"
+#readslocation = librarylocation + "/" + libraryname + "_reads_data"
+readslocation = "/scratch/twmccart/SRAssembler/IRBB7_testing/Sample_IRBB7_reads_data"
 
-
-
-print "mkdir -p ", outputdirectory
-print SRAlocation, " -q ", args.query, " -t protein -p ", SRAconfigurationfile, " -l ", args.library, " -r ./", libraryname, "_reads_data -x 50000 -o ", outputdirectory, " -A 0 -S 0 -s rice -n 10"
+print "mkdir -p " + outputdirectory + " && " + SRAlocation + " -q " + args.query + " -t protein -p " + SRAconfigurationfile + " -l " + args.library + " -r " + readslocation + " -x 50000 -o " + outputdirectory + " -A 0 -S 0 -s rice -n 10"
