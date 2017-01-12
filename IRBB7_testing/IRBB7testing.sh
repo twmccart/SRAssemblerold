@@ -46,7 +46,7 @@
 
 #mkdir -p AtCESA7protein_against_IRBB7
 #../bin/SRAssembler -q AtCESA7protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtCESA7protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
-# Incomplete
+# This fills up /scratch at round 3
 
 #echo "============================================================================================================"
 #echo " Test7: OsCESA9protein_against_IRBB7"

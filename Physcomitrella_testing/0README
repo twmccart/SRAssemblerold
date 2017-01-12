@@ -1,0 +1,3 @@
+The script PHYSCOtesting.sh contains a record of the test configurations run using the Physcomitrella sequencing reads from SRR4023119.
+
+The query files and output directories of runs that completed have been moved to the directory ./completedruns
