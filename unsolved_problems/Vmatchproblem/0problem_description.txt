@@ -1,0 +1,3 @@
+When the AtCESA7 protein sequence (AtCESA7.fa) is used as a query against the Sample_IRBB7 reads, it fills up /scratch during Round 3. The output files of vmatch (in AtCESA7protein_against_IRBB7/tmp) go from ~1MB in round 2 to ~2GB in round 3. 
+Vmatch is using the contigs from the previous round as queries against the reads.
+	Are too many contigs being assembled in round 2? One possible solution is to change the -b parameter (clean round) to something smaller than 3.
