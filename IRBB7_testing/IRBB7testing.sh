@@ -46,7 +46,7 @@ echo "==========================================================================
 
 mkdir -p AtCESA7protein_against_IRBB7
 ../bin/SRAssembler -q AtCESA7protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtCESA7protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
- This fills up /scratch at round 3
+# This fills up /scratch at round 3
 
 #echo "============================================================================================================"
 #echo " Test7: OsCESA9protein_against_IRBB7"
@@ -102,7 +102,7 @@ echo "==========================================================================
 
 mkdir -p Os09g07300gDNA_against_IRBB7
 ../bin/SRAssembler -q Os09g07300gDNA.fa -t cdna -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o Os09g07300gDNA_against_IRBB7 -A 0 -S 0 -s rice -n 10
- Does not complete
+# Does not complete
 
 #echo "============================================================================================================"
 #echo " Test14: AtCESA7CDS_against_IRBB7"

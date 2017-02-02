@@ -10,7 +10,7 @@ do
 	# This grep is necessary to eliminate some unwanted matches
 	grep wget | \
 	grep -o "ftp.*gz" | \
-	xargs wget --no-verbose --no-clobber --show-progress -P ./$cultivar/
+	xargs wget --no-verbose --no-clobber --show-progress --directory-prefix=./$cultivar/
 done
 
 # This code can work if you download the lists of runs for your cultivars from
@@ -18,6 +18,7 @@ done
 # This method does not scale.
 
 #cultivars=`echo */ | sed 's|[/]||g'`
+#cultivars=`echo $* | sed 's|[/]||g'`
 #for cultivar in $cultivars
 #do
 	#echo "cultivar is $cultivar"

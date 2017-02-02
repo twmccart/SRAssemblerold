@@ -10,7 +10,8 @@ import argparse
 # Parse arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--library", help="SRAssembler library configuration file")
-parser.add_argument("--query", help="query protein", )
+parser.add_argument("--query", help="query fasta", )
+parser.add_argument("--type", help="protein or cdna", )
 args = parser.parse_args()
 
 # Name some variables
@@ -23,11 +24,11 @@ librarylocation = "/".join((args.library).split("/")[0:-1])
 outputdirectory = queryname + "_against_" + libraryname
 SRAlocation = "/usr/local/bin/SRAssembler"
 SRAconfigurationfile = "/scratch/twmccart/SRAssembler/data/SRAssembler.conf"
-#readslocation = librarylocation + "/SRA_reads_data"
-readslocation = "/scratch/twmccart/SRAssembler/IRBB7_testing/Sample_IRBB7_reads_data"
+readslocation = librarylocation + "/SRA_reads_data"
+#readslocation = "/scratch/twmccart/SRAssembler/IRBB7_testing/Sample_IRBB7_reads_data"
 
 # Optional for assembling a script
 print('')
 print('echo "============================================================================================================"')
 
-print("mkdir -p " + outputdirectory + " && " + SRAlocation + " -q " + args.query + " -t protein -p " + SRAconfigurationfile + " -l " + args.library + " -r " + readslocation + " -x 50000 -o " + outputdirectory + " -A 0 -S 0 -s rice -n 10")
+print("mkdir -p " + outputdirectory + " && " + SRAlocation + " -q " + args.query + " -t " + args.type + " -p " + SRAconfigurationfile + " -l " + args.library + " -r " + readslocation + " -x 50000 -o " + outputdirectory + " -A 0 -S 0 -s rice -n 10")
