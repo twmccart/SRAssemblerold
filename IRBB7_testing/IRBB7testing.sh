@@ -40,21 +40,21 @@
 #../bin/SRAssembler -q AtPMEI2.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtPMEI2_against_IRBB7 -A 0 -S 0 -s rice -n 10
 # Completed
 
-echo "============================================================================================================"
-echo " Test6: AtCESA7protein_against_IRBB7"
-echo "============================================================================================================"
-
-mkdir -p AtCESA7protein_against_IRBB7
-../bin/SRAssembler -q AtCESA7protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtCESA7protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
-# This fills up /scratch at round 3
-
 #echo "============================================================================================================"
-#echo " Test7: OsCESA9protein_against_IRBB7"
+#echo " Test6: AtCESA7protein_against_IRBB7"
 #echo "============================================================================================================"
 
-#mkdir -p OsCESA9protein_against_IRBB7
-#../bin/SRAssembler -q OsCESA9protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsCESA9protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
-# Completed
+#mkdir -p AtCESA7protein_against_IRBB7
+#../bin/SRAssembler -q AtCESA7protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o AtCESA7protein_against_IRBB7 -A 0 -S 0 -s rice -n 10
+## After adjusting Vmatch outputs, this completes in round 3 with 15 contig matches.
+
+echo "============================================================================================================"
+echo " Test7: OsCESA9protein_against_IRBB7"
+echo "============================================================================================================"
+
+mkdir -p OsCESA9protein_against_IRBB7.newSRAssembler
+../bin/SRAssembler -q OsCESA9protein.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o OsCESA9protein_against_IRBB7.newSRAssembler -A 0 -S 0 -s rice -n 10
+## Completed
 
 #echo "============================================================================================================"
 #echo " Test8: OsCESA9CDS_against_IRBB7"
@@ -96,13 +96,13 @@ mkdir -p AtCESA7protein_against_IRBB7
 #../bin/SRAssembler -q LOC_Os09g07300.1_translation.fa -t protein -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o LOC_Os09g07300.1_translation_against_IRBB7 -A 0 -S 0 -s rice -n 10
 # Completed
 
-echo "============================================================================================================"
-echo " Test13: OsBIGgDNA_against_IRBB7"
-echo "============================================================================================================"
+#echo "============================================================================================================"
+#echo " Test13: OsBIGgDNA_against_IRBB7"
+#echo "============================================================================================================"
 
-mkdir -p Os09g07300gDNA_against_IRBB7
-../bin/SRAssembler -q Os09g07300gDNA.fa -t cdna -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o Os09g07300gDNA_against_IRBB7 -A 0 -S 0 -s rice -n 10
-# Does not complete
+#mkdir -p Os09g07300gDNA_against_IRBB7
+#../bin/SRAssembler -q Os09g07300gDNA.fa -t cdna -p SRAssemblerTest.conf -l Sample_IRBB7.library -r ./Sample_IRBB7_reads_data -x 50000 -o Os09g07300gDNA_against_IRBB7 -A 0 -S 0 -s rice -n 10
+## Completes in round 9 with two huge contigs.
 
 #echo "============================================================================================================"
 #echo " Test14: AtCESA7CDS_against_IRBB7"
