@@ -185,7 +185,7 @@ void VmatchAligner::do_alignment(const string& index_name, const string& type, i
 		  else
 			  param_list += " -" + it->first + " " + it->second;
 	}
-	string cmd = "vmatch " + align_type + " -q " + reads_file + " -l " + int2str(match_length) + " " + e_option + " " + param_list + " -showdesc 0 " + index_name + " > " + output_file;
+	string cmd = "vmatch " + align_type + " -q " + reads_file + " -l " + int2str(match_length) + " " + e_option + " " + param_list + " -showdesc 0 -nodist -noevalue -noscore -noidentity " + index_name + " | awk '{print $1,$2,$3,$4,$5,$6}' | uniq -f5 > " + output_file;
 	logger->debug(cmd);
 	run_shell_command(cmd);
 }
@@ -218,7 +218,7 @@ void VmatchAligner::align_long_contigs(const string& long_contig_candidate_file,
 	string cmd = "mkvtree -dna -db " + contig_file + " -pl -indexname " + indexname + " -allout -v >> " + logger->get_log_file();
 	logger->debug(cmd);
 	run_shell_command(cmd);
-	cmd = "vmatch -q " + long_contig_candidate_file + " -l " + int2str(max_contig_size) + " -showdesc 0 " + indexname + "> " + alignment_out_file;
+	cmd = "vmatch -q " + long_contig_candidate_file + " -l " + int2str(max_contig_size) + " -showdesc 0 -nodist -noevalue -noscore -noidentity " + indexname + " | awk '{print $1,$2,$3,$4,$5,$6}' | uniq -f5 > " + alignment_out_file;
 	logger->debug(cmd);
 	run_shell_command(cmd);
 	ifstream out_file_stream(alignment_out_file.c_str());
