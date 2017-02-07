@@ -72,7 +72,7 @@ void SOAPDenovoAssembler::do_assembly(int kmer, const vector<Library>& libraries
 }
 
 void SOAPDenovoAssembler::clean_files(const string& dir){
-	string cmd = "rm -rf " + dir + "/assembly_*";
+	string cmd = "cp " + dir + "/*.conf " + dir + "/../ ; rm -rf " + dir + "/assembly_*";
 	logger->debug(cmd);
 	run_shell_command(cmd);
 }
