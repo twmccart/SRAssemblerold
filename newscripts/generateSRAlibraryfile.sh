@@ -1,10 +1,9 @@
 #! /bin/bash
 # This script takes a list of file names and outputs an SRAssembler library
-# configuration file to standard out. Redirect into a file. 
+# configuration file to standard out. Redirect into a file.
 
 # A useful way to input absolute paths of the reads you are using:
-# find `pwd` -name "*.fastq" -print | sort | xargs /scratch/twmccart/SRAssembler/newscripts/generatelibrary.sh
-
+# find $(pwd) -name "*.fastq" -print | sort | xargs /scratch/twmccart/SRAssembler/newscripts/generatelibrary.sh
 # The input list of sequence read files must be in interleaved order
 filearray=( $* )
 
@@ -27,4 +26,4 @@ while ((index<$#))
 		echo "format=$format"
 		echo ""
 	done
-	
+

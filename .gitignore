@@ -4,3 +4,4 @@ bin/
 src/*.d
 src/*.o
 doc/manuscript
+data.backup/
