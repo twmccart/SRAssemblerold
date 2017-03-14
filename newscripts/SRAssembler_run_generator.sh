@@ -1,7 +1,5 @@
 #!/usr/bin/bash
-set -e
-set -u
-#set -o pipefail
+set -euo pipefail
 # Take as arguments the path to the query fasta file,the library configuration file,  and optionally the query type
 
 if [ $# -lt 3 ] || [ $# -gt 4 ] ; then

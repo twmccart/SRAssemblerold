@@ -1,4 +1,5 @@
 #! /bin/bash
+set -euo pipefail
 # This script takes a list of file names and outputs an SRAssembler library
 # configuration file to standard out. Redirect into a file.
 
