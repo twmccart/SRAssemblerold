@@ -19,12 +19,12 @@ do
 # Download 3K reads
     # Red text to stand out
     echo -e "\e[1;31mcultivar is: $cultivar\e[0m"
-#    ./xgetreads $cultivar | \
+    ./xgetreads $cultivar | \
     # This grep is necessary to eliminate some unwanted matches
-#    grep wget | \
-#    grep -o "ftp.*gz" | \
-#    xargs -n 1 -P "$(($(nproc) - 1 ))" wget --no-clobber --directory-prefix=./$cultivar/
-#    gunzip ./$cultivar/*.gz
+    grep wget | \
+    grep -o "ftp.*gz" | \
+    xargs -n 1 -P "$(($(nproc) - 1 ))" wget --no-clobber --directory-prefix=./$cultivar/
+    ls ./$cultivar/*.gz | xargs -n 1 -P "$(( $(nproc) - 1 ))" gunzip
     echo -e "\e[1;31mreads downloaded\e[0m"
 # Generate SRAssembler library configuration files
     # The input list of sequence read files must be in interleaved order
