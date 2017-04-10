@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 set -euo pipefail
-# Take as arguments the path to the query fasta file,the library configuration file,  and optionally the query type
+# Take as arguments the path to the query fasta file,the library configuration file, the query type, and optionally the number of nodes to use in MPI mode
 
 if [ $# -lt 3 ] || [ $# -gt 4 ] ; then
     echo "Usage: SRAssembler_run_generator.sh query_path library_path query_type [mpi node number]" >/dev/tty ;
@@ -14,6 +14,7 @@ library=$2
 libraryname=$(expr "$library" : '.*/\(.*\)\..*')
 librarylocation=$(expr "$library" : '\(.*\)/.*')
 
+# This should be "protein" or "cdna"
 querytype=$3
 
 outputdirectory=$queryname"_against_"$libraryname
