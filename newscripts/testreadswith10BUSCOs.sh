@@ -6,7 +6,7 @@ BUSCOlist=`find /scratch/twmccart/SRAssembler/BUSCO/eukaryota_odb9_individualBUS
 
 for BUSCO in $BUSCOlist
 do
-	command=`python /scratch/twmccart/SRAssembler/newscripts/SRAssembler_run_generator.py --query $BUSCO --library $libraryfile`
+	command=`bash ~/Scripts/SRAssembler_run_generator.sh $BUSCO $libraryfile "protein" `
 	echo $command ";"
 	#echo ""
 	#source $command
