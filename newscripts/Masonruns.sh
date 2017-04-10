@@ -14,7 +14,7 @@ for query in $queries; do
     echo "#PBS -N ${query##*/}" >> ${query%.fa}_Masonrun2.pbs
     echo "#PBS -j oe" >> ${query%.fa}_Masonrun2.pbs
     for library in $genomelibraries; do
-        ( sh SRAssembler_run_generator.sh $query $library protein "24" ) >> ${query%.fa}_Masonrun2.pbs
+        ( sh MasonSRAssembler_run_generator.sh $query $library protein "24" ) >> ${query%.fa}_Masonrun2.pbs
         done
     cp ${query%.fa}_Masonrun2.pbs ~/
 done
