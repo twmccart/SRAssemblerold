@@ -23,10 +23,8 @@ readslocation=$librarylocation"/SRA_reads_data"
 
 if [ ! -z $4 ] ; then
     echo ""
-    echo "echo '==========================================================================='"
     echo "mkdir -p "$outputdirectory" && mpirun -n "$4" "${SRAlocation}/SRAssembler_MPI" -q "$query" -t "$querytype" -p "$SRAconfigurationfile" -l "$library" -r "$readslocation" -o "$outputdirectory" -A 0 -S 0 -s rice -n 10 -c 0.9"
 else
     echo ""
-    echo "echo '==========================================================================='"
     echo "mkdir -p "$outputdirectory" && "$SRAlocation"/SRAssembler -q "$query" -t "$querytype" -p "$SRAconfigurationfile" -l "$library" -r "$readslocation" -o "$outputdirectory" -A 0 -S 0 -s rice -n 10 -c 0.9"
 fi
