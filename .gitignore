@@ -4,3 +4,8 @@ bin/
 src/*.d
 src/*.o
 doc/manuscript
+BUSCO/
+IRBB7_testing/
+Physcomitrella_testing/
+data.backup/
+unsolved_problems/
